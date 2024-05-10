@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+
+
+    <!-- Example Code -->
+   <div class=" top">
+        <div class="row" style="--bs-gutter-x: 0rem!important;">
+        <div class="col">
+              {% for test in tests %}
+            <div class="card border-success mb-3 col-md-12 m-2 col col-lg-6 col-xl-6 col-xxl-6 " style="">
+                <div class="card-header bg-transparent border-success">category :{{test.category}}</div>
+                <div class="card-body text-success">
+                    <h5 class="card-title">{{test.title}}</h5>
+                    <p class="card-text"> <p class="card-text">маллымат бары {{test.question_set.all.count}}</strong> суроо</p></p>
+                    <a>Тести тузгон адам <span> @{{ test.author}}</span></a>
+                    <a class="btn btn-primary btn-lgs  float-end" href="{% url 'okuu:ready_to_test' test.id%}">ТЕСТ</a>
+                </div>
+                <div class="card-footer bg-transparent border-success">
+                   
+                  
+                </div>
+            </div>
+    {% endfor%}
+        </div>
+
+    </div>
+   </div>
+{%endblock content%}

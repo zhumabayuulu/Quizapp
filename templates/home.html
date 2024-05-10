@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/home.css'%}">
+<style>@media (min-width: 769px) and (max-width: 1400px) {.topp{ margin-top:10rem !important; }</style>
+
+<body>
+    <div class="container topp mb-5" style="margin-bottom:2rem;">
+    </div>
+    <div class="container mb-5">
+        <div class="row custom-section d-flex align-items-center">
+            <div class="col-12 col-lg-4 mt-0">
+                <h4><i class= 'bx bxs-graduation'></i>Quizapp аянтчасыгы</h4>
+                <h4>кош келиниз  welcome Quizapp </h4>
+               
+                </p>
+             <a class="me-5 mt-0 mr-5" href="{% url 'users:register'%}">register</a>
+                <a href="{% url 'users:login'%}">login</a>
+            </div>
+            <div class="col-12 col-lg-8">
+                <img src="{% static 'img/mainbenner.png'%}" alt="Team process banner">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+{% endblock content %}
+
