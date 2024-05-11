@@ -46,7 +46,7 @@ def test(request, test_id):
                 CheckQuestion.objects.create(checktest=checktest, question=question, given_answer=given_answer,
                                              true_answer=question.true_answer)
             checktest.save()
-            return redirect('okuu:checktest', checktest.id)
+            return redirect('test:checktest', checktest.id)
         context = {'test': test, 'questions': questions}
         return render(request, 'test/test.html', context)
     else:
@@ -68,7 +68,7 @@ def new_test(request):
         form = TestForm(data=request.POST)
         if form.is_valid:
             test_id = form.save(request)
-            return redirect('okuu:new_question', test_id)
+            return redirect('test:new_question', test_id)
     return render(request, 'test/new_test.html', {'form': form})
 
 
@@ -82,8 +82,8 @@ def new_question(request, test_id):
             if form.is_valid:
                 form.save(test_id)
                 if form.cleaned_data['болот_жетишту']:
-                    return redirect('okuu:list_test')  #okuu:index
-                return redirect('okuu:new_question', test.id)
+                    return redirect('test:list_test')  #okuu:index
+                return redirect('test:new_question', test.id)
         return render(request, 'test/new_question.html', {'form': form, 'test': test})
     else:
         return HttpResponse('something went wrong')

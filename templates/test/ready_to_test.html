@@ -13,8 +13,8 @@
       <p>Author:<a href ="{% url 'users:profile' test.author.username  %}">@{{test.author.username}}</a></p>
   </div>
   <div class="card-footer bg-transparent border-success">
-       <a class="btn btn-primary me-5" href="{% url 'okuu:test' test.id %}">start test</a>
-      <a class="btn btn-secondary  " href="{% url 'okuu:list_test'  %}">back</a>
+       <a class="btn btn-primary me-5" href="{% url 'test:test' test.id %}">start test</a>
+      <a class="btn btn-secondary  " href="{% url 'test:list_test'  %}">back</a>
   </div>
 </div>
 {%endblock content%}

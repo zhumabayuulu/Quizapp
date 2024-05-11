@@ -2,7 +2,7 @@ from django.urls import path
 from .views import *
 
 
-app_name = 'okuu'
+app_name = 'test'
 urlpatterns = [
     # test url
     path('list/',testlist,name='list_test'),
@@ -13,6 +13,5 @@ urlpatterns = [
     path('<int:test_id>/new_question',new_question,name='new_question'),
     # category url
     path('test/<str:category_name>/category', TestView.as_view(), name='category'),
-    # end category
 
 ]

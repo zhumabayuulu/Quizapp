@@ -7,6 +7,4 @@ urlpatterns = [
     path('profile/<str:username>', ProfailView.as_view(), name='profile'),
     path('update/', UpdateProfileView.as_view(), name='update'),
     path('logout/',logout_user,name='logout'),
-#    path('contact',contactForm,name='contact_form'),
-
 ]

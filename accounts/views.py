@@ -1,11 +1,11 @@
 from django.contrib import messages
-from django.contrib.auth import logout, authenticate, login
+from django.contrib.auth import logout, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
-from .forms import CustomUserCreationForm, CustomUserChangeForm  #, ContactFormm
+from .forms import CustomUserCreationForm, CustomUserChangeForm
 from .models import CustomUser
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
@@ -18,9 +18,9 @@ class SignupView(UserPassesTestMixin, View):
     def get(self, request):
         if request.method == "GET":
             form = CustomUserCreationForm()
-            for f in form:
-                if f.label == "Password":
-                    f.label = "китептин суротору"
+            # for f in form:
+            #     if f.label == "Password":
+            #         f.label = "китептин суротору"
         return render(request, 'registration/signup.html', {'forms': CustomUserCreationForm()})
 
     def post(self, request):
@@ -57,7 +57,7 @@ class Login(View):
             user = login_form.get_user()
             login(request, user)
 
-            return redirect('okuu:list_test')
+            return redirect('test:list_test')
         else:
             return render(request, 'registration/login.html', {'form': login_form})
 
