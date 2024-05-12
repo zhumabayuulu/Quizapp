@@ -8,7 +8,7 @@
         {% if checktest.user_passed %}
             <h1>сиз тесттен отунуз</h1>
         {%else%}
-            <h1>сиз тестен откон жоксуз {{checktest.test.pass_percentage}}%</h1>
+            <h1>сиз тестен откон жоксуз тестен отуу учун {{checktest.test.pass_percentage}}% жогору болуу керек</h1>
         {%endif%}
             <h2 class="mb-4">сиз суроолордун  {{checktest.percentage}}%  тураа жооп бердиниз</h2>
         </center>
@@ -17,7 +17,7 @@
             <h5>{{forloop.counter}}. {{q.question}}</h5>
             {% if q.is_true %}
             <div class="answer p-2">
-                <p>Note: {{q.given_answer}} was marked</p>
+                <p>Note: {{q.given_answer}} сиз берген жооп</p>
                 <p>A. {{q.question.a}}</p>
                 <p>B. {{q.question.a}}</p>
                 <p>C. {{q.question.a}}</p>
@@ -25,7 +25,7 @@
             </div>
             {% else %}
             <div style="background-color: orange;"class="'answers p-2">
-                 <p>Note: {{q.given_answer}} was marked</p>
+                 <p>Note: {{q.given_answer}} сиз берген  жооп</p>
                 <p>A. {{q.question.a}}</p>
                 <p>B. {{q.question.a}}</p>
                 <p>C. {{q.question.a}}</p>
