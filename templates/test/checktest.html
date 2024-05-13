@@ -14,7 +14,7 @@
             <h5>{{forloop.counter}}. {{q.question}}</h5>
             {% if q.is_true %}
             <div style="background-color:green;" class="answer p-2">
-                <p>Note: {{q.given_answer}} сиз берген жооп</p>
+                <p class="h4">Сиз берген жооп : {{q.given_answer}} жооп туура</p>
                 <p>A. {{q.question.a}}</p>
                 <p>B. {{q.question.a}}</p>
                 <p>C. {{q.question.a}}</p>
@@ -22,11 +22,11 @@
             </div>
             {% else %}
             <div style="background-color:orange;"class="answers p-2">
-                 <p>Note: {{q.given_answer}} сиз берген  жооп</p>
+                 <p class="h4">Сиз берген  жооп :{{q.given_answer}} бул жооп ката </p>
                 <p>A. {{q.question.a}}</p>
-                <p>B. {{q.question.a}}</p>
-                <p>C. {{q.question.a}}</p>
-                <p>D. {{q.question.a}}</p>
+                <p>B. {{q.question.b}}</p>
+                <p>C. {{q.question.c}}</p>
+                <p>D. {{q.question.d}}</p>
             </div>
                 {%endif%}
                 {%endfor%}
